@@ -23,8 +23,8 @@
 #
 
 # Conditional build support
-# add --with aac option, i.e. disable AAC by default
-%bcond_with aac
+# add --without aac option, i.e. enable AAC by default
+%bcond_without aac
 
 # add --without flac option, i.e. enable FLAC by default
 %bcond_without flac
@@ -52,6 +52,7 @@ Source0:        http://downloads.sourceforge.net/%{name}/%{name}-%{version}.tar.
 
 BuildRequires:  desktop-file-utils
 BuildRequires:  fltk-devel
+BuildRequires:  libsamplerate-devel
 BuildRequires:  portaudio-devel
 
 %if %{with aac}
