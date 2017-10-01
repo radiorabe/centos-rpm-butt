@@ -52,8 +52,8 @@ Source0:        http://downloads.sourceforge.net/%{name}/%{name}-%{version}.tar.
 
 BuildRequires:  desktop-file-utils
 BuildRequires:  fltk-devel
-BuildRequires:  portaudio-devel
 BuildRequires:  libsamplerate-devel
+BuildRequires:  portaudio-devel
 
 %if %{with aac}
 BuildRequires:  fdk-aac-devel
