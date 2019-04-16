@@ -23,8 +23,8 @@
 #
 
 # Conditional build support
-# add --without aac option, i.e. enable AAC by default
-%bcond_without aac
+# add --with aac option, i.e. disable AAC by default
+%bcond_with aac
 
 # add --without flac option, i.e. enable FLAC by default
 %bcond_without flac
@@ -42,8 +42,8 @@
 %global iconsdir %{_datadir}/icons
 
 Name:           butt
-Version:        0.1.16
-Release:        3%{?dist}
+Version:        0.1.17
+Release:        1%{?dist}
 Summary:        butt is an easy to use, multi OS streaming tool
 
 License:        GPLv2 
@@ -51,7 +51,9 @@ URL:            http://danielnoethen.de/
 Source0:        http://downloads.sourceforge.net/%{name}/%{name}-%{version}.tar.gz
 
 BuildRequires:  desktop-file-utils
+BuildRequires:  dbus-devel
 BuildRequires:  fltk-devel
+BuildRequires:  gcc-c++
 BuildRequires:  libsamplerate-devel
 BuildRequires:  portaudio-devel
 
@@ -96,7 +98,7 @@ audio files.
 # a bit to avoid the following compile errors:
 # /bin/ld: FLTK/Fl_My_Native_File_Chooser.o: undefined reference to symbol 'XNextEvent'
 # /bin/ld: FLTK/flgui.o: undefined reference to symbol '_ZN16Fl_Double_Window4hideEv'
-%configure LIBS="-lX11 -lfltk"
+%configure LIBS="-lX11 -lfltk" %{!?with_aac:--disable-aac}
 make %{?_smp_mflags}
 
 
@@ -111,7 +113,7 @@ desktop-file-install \
     --remove-category="Sound" \
     --add-category="AudioVideo;Audio" \
     --dir=%{buildroot}%{_datadir}/applications \
-    icons/%{name}.desktop \
+    usr/share/applications/%{name}.desktop \
 
 # Install the various icons according to the "Icon Theme Specification"
 # https://specifications.freedesktop.org/icon-theme-spec/icon-theme-spec-latest.html
@@ -149,10 +151,13 @@ fi
 %doc ChangeLog NEWS README KNOWN_BUGS
 %{_bindir}/*
 %{_datadir}/applications/*.desktop
-%{iconsdir}/*
-
+%attr(0644, -, -) %{iconsdir}/*/*/*/*.png
 
 
 %changelog
+* Tue Apr 16 2019 Lucas Bickel <hairmare@rabe.ch> - 0.1.17-1
+- Bump to 0.1.17
+- Disable AAC in default build
+
 * Thu Sep 21 2017 Christian Affolter <c.affolter@purplehaze.ch> - 0.1.16-3
 - Initial release
