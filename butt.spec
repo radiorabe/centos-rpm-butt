@@ -42,7 +42,7 @@
 %global iconsdir %{_datadir}/icons
 
 Name:           butt
-Version:        0.1.17
+Version:        0.1.18
 Release:        1%{?dist}
 Summary:        butt is an easy to use, multi OS streaming tool
 
@@ -155,6 +155,9 @@ fi
 
 
 %changelog
+* Sun May 12 2019 Christian Affolter <c.affolter@purplehaze.ch> - 0.1.18-1
+- Bump to 0.1.18
+
 * Tue Apr 16 2019 Lucas Bickel <hairmare@rabe.ch> - 0.1.17-1
 - Bump to 0.1.17
 - Disable AAC in default build
