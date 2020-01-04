@@ -42,12 +42,12 @@
 %global iconsdir %{_datadir}/icons
 
 Name:           butt
-Version:        0.1.18
+Version:        0.1.19
 Release:        1%{?dist}
 Summary:        butt is an easy to use, multi OS streaming tool
 
 License:        GPLv2 
-URL:            http://danielnoethen.de/
+URL:            http://danielnoethen.de/butt/
 Source0:        http://downloads.sourceforge.net/%{name}/%{name}-%{version}.tar.gz
 
 BuildRequires:  desktop-file-utils
@@ -155,6 +155,10 @@ fi
 
 
 %changelog
+* Sat Jan 04 2020 Christian Affolter <c.affolter@purplehaze.ch> - 0.1.19-1
+- Bump to 0.1.19
+- Updated project website URL
+
 * Sun May 12 2019 Christian Affolter <c.affolter@purplehaze.ch> - 0.1.18-1
 - Bump to 0.1.18
 
