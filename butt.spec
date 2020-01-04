@@ -1,8 +1,8 @@
 #
 # spec file for package butt
 #
-# Copyright (c) 2017 - 2019 Radio Bern RaBe
-#                           http://www.rabe.ch
+# Copyright (c) 2017 - 2020 Radio Bern RaBe
+#                           https://rabe.ch
 #
 # This program is free software: you can redistribute it and/or
 # modify it under the terms of the GNU Affero General Public 
