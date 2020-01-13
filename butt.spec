@@ -1,8 +1,8 @@
 #
 # spec file for package butt
 #
-# Copyright (c) 2017 - 2019 Radio Bern RaBe
-#                           http://www.rabe.ch
+# Copyright (c) 2017 - 2020 Radio Bern RaBe
+#                           https://rabe.ch
 #
 # This program is free software: you can redistribute it and/or
 # modify it under the terms of the GNU Affero General Public 
@@ -42,12 +42,12 @@
 %global iconsdir %{_datadir}/icons
 
 Name:           butt
-Version:        0.1.18
+Version:        0.1.19
 Release:        1%{?dist}
 Summary:        butt is an easy to use, multi OS streaming tool
 
 License:        GPLv2 
-URL:            http://danielnoethen.de/
+URL:            http://danielnoethen.de/butt/
 Source0:        http://downloads.sourceforge.net/%{name}/%{name}-%{version}.tar.gz
 
 BuildRequires:  desktop-file-utils
@@ -155,6 +155,10 @@ fi
 
 
 %changelog
+* Sat Jan 04 2020 Christian Affolter <c.affolter@purplehaze.ch> - 0.1.19-1
+- Bump to 0.1.19
+- Updated project website URL
+
 * Sun May 12 2019 Christian Affolter <c.affolter@purplehaze.ch> - 0.1.18-1
 - Bump to 0.1.18
 
