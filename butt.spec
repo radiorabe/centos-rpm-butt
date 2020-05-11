@@ -42,8 +42,8 @@
 %global iconsdir %{_datadir}/icons
 
 Name:           butt
-Version:        0.1.19
-Release:        1%{?dist}
+Version:        0.1.20
+Release:        0.1%{?dist}
 Summary:        butt is an easy to use, multi OS streaming tool
 
 License:        GPLv2 
@@ -56,6 +56,7 @@ BuildRequires:  fltk-devel
 BuildRequires:  gcc-c++
 BuildRequires:  libsamplerate-devel
 BuildRequires:  portaudio-devel
+BuildRequires:	openssl-devel
 
 %if %{with aac}
 BuildRequires:  fdk-aac-devel
@@ -155,6 +156,9 @@ fi
 
 
 %changelog
+* Mon May 11 2020 Lucas Bickel <hairmare@rabe.ch> - 0.1.20-0.1
+- Bump to 0.1.20
+
 * Sat Jan 04 2020 Christian Affolter <c.affolter@purplehaze.ch> - 0.1.19-1
 - Bump to 0.1.19
 - Updated project website URL
